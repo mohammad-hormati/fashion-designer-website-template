@@ -1,9 +1,7 @@
-import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import MuiTheme from '@/theme/MuiTheme';
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { CssBaseline } from '@mui/material';
-import { theme } from './theme/themes';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +13,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <body className={inter.className}>{children}</body>
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <MuiTheme>
+        <body className={inter.className}>{children}</body>
+      </MuiTheme>
     </html>
   );
 }

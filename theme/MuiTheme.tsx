@@ -21,7 +21,7 @@ export const modeContext = createContext<ModeContext | null>(null);
 
 export default function MuiTheme({ children }: { children: React.ReactNode }) {
   // states
-  const [mode, setMode] = useState<'light' | 'dark'>('dark');
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
   const themeOptions: ThemeOptions = {
     palette: {
